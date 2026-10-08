@@ -231,7 +231,7 @@ rateLimit:
   requestDelay: 2.5     # base delay between requests (randomized ×0.7–1.5)
   maxRetries: 3          # retry count on rate limit (429)
   retryBaseDelay: 5.0    # base delay for exponential backoff
-  maxCount: 200          # hard cap on fetched items
+  maxCount: 3200         # hard cap on fetched items (full timeline depth)
 ```
 
 Fetch behavior:

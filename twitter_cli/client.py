@@ -68,8 +68,10 @@ _cffi_session = None
 
 TimelineInstructionGetter = Callable[[Any], Any]
 
-# Hard ceiling to prevent accidental massive fetches
-_ABSOLUTE_MAX_COUNT = 500
+# Hard ceiling to prevent accidental massive fetches; keep it above the config
+# maxCount so config.yaml governs the normal cap (3200) and only absurd
+# --max values still get bounded here.
+_ABSOLUTE_MAX_COUNT = 10000
 
 
 # ── Session management ───────────────────────────────────────────────────
